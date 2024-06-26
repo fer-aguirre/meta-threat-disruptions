@@ -1,6 +1,7 @@
 import requests
 import hashlib
 import os
+import sys
 
 def get_website_content(url):
     response = requests.get(url)
@@ -25,5 +26,6 @@ if __name__ == "__main__":
     url = "https://transparency.meta.com/es-la/metasecurity/threat-reporting/"
     if has_website_changed(url):
         print("Website has changed.")
+        sys.exit(1)
     else:
         print("No changes detected.")
